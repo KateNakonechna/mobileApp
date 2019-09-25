@@ -1,59 +1,43 @@
-<!-- https://docs.nativescript.org/angular/core-concepts/angular-navigation.html#page-router-outlet -->
+<BottomNavigation>
+    <TabStrip class="action-bar">
+        <TabStripItem>
+            <Label text="Create task"></Label>
+            <Image src="font://&#xf067;" class="fa t-36"></Image>
+        </TabStripItem>
+        <TabStripItem>
+            <Label text="Task list"></Label>
+            <Image src="font://&#xf0ca;" class="fa t-36"></Image>
+        </TabStripItem>
+        <TabStripItem>
+            <Label text="completed"></Label>
+            <Image src="font://&#xf00c;" class="fa t-36"></Image>
+        </TabStripItem>
+        <TabStripItem>
+                <Label text="stats"></Label>
+                <Image src="font://&#xf080;" class="fa t-36"></Image>
+            </TabStripItem>
+        <TabStripItem>
+            <Label text="settings"></Label>
+            <Image src="font://&#xf013;" class="fa t-36"></Image>
+        </TabStripItem>
 
-<RadSideDrawer drawerTransition="PushTransition">
-    <GridLayout tkDrawerContent rows="auto, *" class="sidedrawer sidedrawer-left">
-        <StackLayout class="sidedrawer-header">
-            <Image src="&#xf007;"
-                   class="sidedrawer-avatar"></Image>
-            <Label class="sidedrawer-header-text var" text="Kate Nakonechna"></Label>
-            <Label class="sidedrawer-header-footnote var" text="nakonechna@gmail.com"></Label>
-        </StackLayout>
+    </TabStrip>
 
-        <ScrollView row="1">
-            <StackLayout class="sidedrawer-content">
+    <TabContentItem>
+        <page-router-outlet name="task"></page-router-outlet>
+    </TabContentItem>
 
-                <StackLayout class="hr-light"></StackLayout>
+    <TabContentItem>
+        <page-router-outlet name="list"></page-router-outlet>
+    </TabContentItem>
 
-                <GridLayout columns="auto, *" class="sidedrawer-list-item"
-                            title="Create Tasks" (tap)="navigateToTask()">
-                    <Label row="0" col="0" text="&#xf067;" class="fa sidedrawer-icon"></Label>
-                    <Label row="0" col="1" text="Create Tasks" class="m-l-20 sidedrawer-item"></Label>
-                </GridLayout>
-
-                <StackLayout class="hr-light"></StackLayout>
-
-                <GridLayout columns="auto, *" class="sidedrawer-list-item"
-                            title="Completed" (tap)="navigateToList()">
-                    <Label row="0" col="0" text="&#xf0ca;" class="fa sidedrawer-icon"></Label>
-                    <Label row="0" col="1" text="Task list" class="m-l-20 sidedrawer-item"></Label>
-                </GridLayout>
-
-                <StackLayout class="hr-light"></StackLayout>
-
-                <GridLayout columns="auto, *" class="sidedrawer-list-item"
-                            title="Stats" (tap)="navigateToStats()">
-                    <Label row="0" col="0" text="&#xf080;" class="fa sidedrawer-icon"></Label>
-                    <Label row="0" col="1" text="Stats" class="m-l-20 sidedrawer-item"></Label>
-                </GridLayout>
-
-                <StackLayout class="hr-light"></StackLayout>
-
-                <GridLayout columns="auto, *" class="sidedrawer-list-item"
-                            title="Settings" (tap)="navigateToSettings()">
-                    <Label row="0" col="0" text="&#xf013;" class="fa sidedrawer-icon"></Label>
-                    <Label row="0" col="1" text="Settings" class="m-l-20 sidedrawer-item"></Label>
-                </GridLayout>
-
-                <StackLayout class="hr-light"></StackLayout>
-
-                <GridLayout columns="auto, *" class="sidedrawer-list-item"
-                           title="Completed Task" (tap)="navigateToCompleted()">
-                <Label row="0" col="0" text="&#xf00c;" class="fa sidedrawer-icon"></Label>
-                 <Label row="0" col="1" text="Completed Task" class="m-l-20 sidedrawer-item"></Label>
-                  </GridLayout>
-
-            </StackLayout>
-        </ScrollView>
-    </GridLayout>
-    <page-router-outlet tkMainContent class="page page-content"></page-router-outlet>
-</RadSideDrawer>
+    <TabContentItem>
+        <page-router-outlet name="completed"></page-router-outlet>
+    </TabContentItem>
+    <TabContentItem>
+        <page-router-outlet name="stats"></page-router-outlet>
+    </TabContentItem>
+    <TabContentItem>
+        <page-router-outlet name="settings"></page-router-outlet>
+    </TabContentItem>
+</BottomNavigation>

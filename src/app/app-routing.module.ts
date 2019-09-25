@@ -9,13 +9,16 @@ import { SettingsComponent } from './tasks/settings/settings.component';
 import { CompletedTaskComponent } from './tasks/completed-task/completed-task.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/task', pathMatch: 'full' },
-  { path: 'task', component: TaskFormComponent },
-  { path: 'list', component: TaskListComponent },
-  { path: 'list/:id', component: TaskItemComponent },
-  { path: 'stats', component: StatsComponent },
-  { path: 'settings', component: SettingsComponent },
-  { path: 'completed', component: CompletedTaskComponent }
+  {
+    path: '',
+    redirectTo: '/(task:task//list:list//completed:completed//stats:stats//settings:settings)',
+    pathMatch: 'full'
+  },
+  { path: 'task', component: TaskFormComponent, outlet: 'task' },
+  { path: 'list', component: TaskListComponent, outlet: 'list' },
+  { path: 'completed', component: CompletedTaskComponent, outlet: 'completed' },
+  { path: 'stats', component: StatsComponent, outlet: 'stats' },
+  { path: 'settings', component: SettingsComponent, outlet: 'settings' }
 ];
 
 @NgModule({

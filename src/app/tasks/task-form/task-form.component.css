@@ -6,9 +6,9 @@
 }
 
 .btn {
-  background-color: #48b1ec;
+  background-color: #09af00;
   border-radius: 15;
-  color: white;
+  color: black;
   font-size: 14;
   vertical-align: middle;
   width: 200;
@@ -56,3 +56,5 @@ StackLayout {
   border-bottom-color: red;
   color: red;
 }
+
+

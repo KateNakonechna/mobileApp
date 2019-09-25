@@ -1,15 +1,9 @@
 
-Button{
-    background-color: blue;
-}
 
-Label{
-    width: 200;
-}
 .btn{
-    background-color: #48b1ec;
+    background-color: #09af00;
     border-radius: 15;
-    color: white;
+    color: black;
     font-size: 10;
     vertical-align: middle;
     width: 40;
@@ -19,14 +13,14 @@ Label{
 }
 
 .action-bar-title {
-    color:white;
+    color:black;
 }
-
-
 
 .fa {
     font-family: "FontAwesome";
-
 }
 
+task{
+    width: 200;
+}
 

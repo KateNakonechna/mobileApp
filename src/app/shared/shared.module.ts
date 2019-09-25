@@ -5,6 +5,7 @@ import { ActionBarComponent } from './action-bar/action-bar.component';
 @NgModule({
   declarations: [ActionBarComponent],
   imports: [NativeScriptCommonModule],
-  schemas: [NO_ERRORS_SCHEMA]
+  schemas: [NO_ERRORS_SCHEMA],
+  exports: [ActionBarComponent]
 })
 export class SharedModule {}

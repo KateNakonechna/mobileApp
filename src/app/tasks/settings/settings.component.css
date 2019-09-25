@@ -1,4 +1,9 @@
 
 .action-bar-title{
-    color:white;
+    color:black;
+}
+.btn{
+    background-color: #09af00;
+    color:black;
+
 }
