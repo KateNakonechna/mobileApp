@@ -1,0 +1,70 @@
+<GridLayout rows="35">
+    <GridLayout row="0" columns="50" backgroundColor="#48b1ec">
+        <Label col="0" text="&#xf0c9;" class="fa menu-icon" (tap)="onDrawerButtonTap($event)"></Label>
+    </GridLayout>
+</GridLayout>
+<StackLayout class="form" [formGroup]="form">
+    <StackLayout class="input-field">
+        <Label
+                class="label"
+                text="Task title"
+        ></Label>
+        <TextField
+                class="input"
+                returnKeyType="next"
+                formControlName="task"
+
+        ></TextField>
+        <Label
+                class="label"
+                *ngIf="!taskControlIsValid"
+                text="Please enter task title."
+                [ngClass]="{ invalid: !taskControlIsValid }"
+        ></Label>
+    </StackLayout>
+    <StackLayout class="input-field">
+        <Label
+                class="label"
+                text="Priority"
+        ></Label>
+        <TextField
+                class="input"
+                returnKeyType="next"
+                formControlName="priority"
+                keyboardType="number"
+        ></TextField>
+    </StackLayout>
+
+    <StackLayout class="input-field">
+        <Label
+                class="label"
+                text="Difficulty"
+        ></Label>
+        <TextField
+                class="input"
+                returnKeyType="next"
+                formControlName="difficulty"
+
+        ></TextField>
+    </StackLayout>
+
+    <StackLayout class="input-field">
+       <DropDown #dd
+                 formControlName="category"
+                  backroundColor="red"
+                  itemsTextAlignment="center"
+                  [items]="items"
+        ></DropDown>
+        <Label text="Category name"
+               fontSize="12"
+               verticalAlignment="bottom"></Label>
+    </StackLayout>
+    <Button
+            text="Save"
+            class="btn btn-primary btn-rounded-lg"
+            (tap)="onSubmit()"
+            [isEnabled]="form.valid"
+    ></Button>
+</StackLayout>
+
+

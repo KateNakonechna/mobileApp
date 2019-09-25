@@ -1,0 +1,26 @@
+
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Settings" horizontalAlignment="center"></Label>
+</ActionBar>
+<StackLayout class="form" [formGroup]="form">
+    <StackLayout class="input-field">
+        <Label
+                class="label"
+                text="Category"
+        ></Label>
+        <TextField
+                class="input"
+                hint="Enter category name"
+                returnKeyType="next"
+                formControlName="category"
+        ></TextField>
+    </StackLayout>
+    <Button
+            text="Add category"
+            class="btn btn-primary btn-rounded-lg"
+            (tap)="onSubmit()"
+            [isEnabled]="form.valid"
+    ></Button>
+</StackLayout>
+
+

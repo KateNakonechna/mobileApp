@@ -1,0 +1,12 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Completed Tasks" horizontalAlignment="center"></Label>
+</ActionBar>
+<ScrollView class="page">
+    <ListView class="list-group" [items]="items | async">
+        <ng-template let-item="item">
+            <FlexboxLayout flexDirection="row" justifyContent="space-around">
+                <Label alignSelf="center" [nsRouterLink]="['/list', item.id]" [text]="item.task"  ></Label>
+            </FlexboxLayout>
+        </ng-template>
+    </ListView>
+</ScrollView>

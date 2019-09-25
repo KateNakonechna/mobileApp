@@ -1,0 +1,43 @@
+
+<ActionBar class="action-bar"  >
+    <Label class="action-bar-title" [text]="task.task" horizontalAlignment="center"></Label>
+</ActionBar>
+<GridLayout class="page page-content">
+    <ScrollView>
+        <GridLayout rows="auto, auto, auto,auto">
+            <Image src="~/assets/task.png" stretch="aspectFill" height="150" class="m-b-15"></Image>
+
+            <StackLayout row="1" class="hr-light m-t-15 m-b-15"></StackLayout>
+
+            <GridLayout row="2" rows="*,*,*,*," columns="auto, auto">
+
+                <Label text="Category" class="p-l-15 p-b-10 m-r-20 text-secondary" row="1"></Label>
+                <Label [text]="task.category" row="1" col="1" class="text p-b-10"></Label>
+
+                <Label text="Priority" class="p-l-15 p-b-10 m-r-20 text-secondary" row="2"></Label>
+                <Label [text]="task.priority" row="2" col="1" class="text p-b-10"></Label>
+
+                <Label text="Difficulty" class="p-l-15 p-b-10 m-r-20 text-secondary" row="3"></Label>
+                <Label [text]="task.difficulty" row="3" col="1" class="text p-b-10"></Label>
+
+            </GridLayout>
+            <FlexboxLayout row="3" flexDirection="column">
+                    <Label class="label" text="Progress of task"></Label>
+                    <Progress [value]="progressValue"
+                    maxValue="100" class="m-20">
+                  </Progress>
+                  <Button class="btn" text="add progress" (tap)="addProgress(task)"></Button>
+            </FlexboxLayout>
+
+        </GridLayout>
+    </ScrollView>
+</GridLayout>
+
+<!-- <FlexboxLayout flexDirection="column">
+        <Label text="Progress of task"></Label>
+        <Progress [value]="progressValue"
+        maxValue="100" class="m-20">
+      </Progress>
+      <Button class="btn" text="add progress" (tap)="addProgress()"></Button>
+</FlexboxLayout> -->
+

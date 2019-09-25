@@ -1,0 +1,22 @@
+
+Image{
+    width: 150;
+    height: 100;
+}
+.btn{
+    background-color: #48b1ec;
+    border-radius: 15;
+    color: white;
+    font-size: 14;
+    vertical-align: middle;
+
+}
+
+.action-bar-title{
+    color:white;
+
+}
+
+.label{
+    text-align: center;
+}

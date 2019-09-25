@@ -1,0 +1,31 @@
+
+
+Button{
+    background-color: blue;
+}
+
+Label{
+    width: 200;
+    height: 50;
+    text-align: center;
+}
+.btn{
+    background-color: #48b1ec;
+    border-radius: 15;
+    color: white;
+    font-size: 10;
+    vertical-align: middle;
+    width: 40;
+    height: 30;
+}
+
+.action-bar-title {
+    color:white;
+}
+
+.fa {
+    font-family: "FontAwesome";
+
+}
+
+

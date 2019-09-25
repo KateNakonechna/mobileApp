@@ -1,0 +1,59 @@
+<!-- https://docs.nativescript.org/angular/core-concepts/angular-navigation.html#page-router-outlet -->
+
+<RadSideDrawer drawerTransition="PushTransition">
+    <GridLayout tkDrawerContent rows="auto, *" class="sidedrawer sidedrawer-left">
+        <StackLayout class="sidedrawer-header">
+            <Image src="&#xf007;"
+                   class="sidedrawer-avatar"></Image>
+            <Label class="sidedrawer-header-text var" text="Kate Nakonechna"></Label>
+            <Label class="sidedrawer-header-footnote var" text="nakonechna@gmail.com"></Label>
+        </StackLayout>
+
+        <ScrollView row="1">
+            <StackLayout class="sidedrawer-content">
+
+                <StackLayout class="hr-light"></StackLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item"
+                            title="Create Tasks" (tap)="navigateToTask()">
+                    <Label row="0" col="0" text="&#xf067;" class="fa sidedrawer-icon"></Label>
+                    <Label row="0" col="1" text="Create Tasks" class="m-l-20 sidedrawer-item"></Label>
+                </GridLayout>
+
+                <StackLayout class="hr-light"></StackLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item"
+                            title="Completed" (tap)="navigateToList()">
+                    <Label row="0" col="0" text="&#xf0ca;" class="fa sidedrawer-icon"></Label>
+                    <Label row="0" col="1" text="Task list" class="m-l-20 sidedrawer-item"></Label>
+                </GridLayout>
+
+                <StackLayout class="hr-light"></StackLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item"
+                            title="Stats" (tap)="navigateToStats()">
+                    <Label row="0" col="0" text="&#xf080;" class="fa sidedrawer-icon"></Label>
+                    <Label row="0" col="1" text="Stats" class="m-l-20 sidedrawer-item"></Label>
+                </GridLayout>
+
+                <StackLayout class="hr-light"></StackLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item"
+                            title="Settings" (tap)="navigateToSettings()">
+                    <Label row="0" col="0" text="&#xf013;" class="fa sidedrawer-icon"></Label>
+                    <Label row="0" col="1" text="Settings" class="m-l-20 sidedrawer-item"></Label>
+                </GridLayout>
+
+                <StackLayout class="hr-light"></StackLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item"
+                           title="Completed Task" (tap)="navigateToCompleted()">
+                <Label row="0" col="0" text="&#xf00c;" class="fa sidedrawer-icon"></Label>
+                 <Label row="0" col="1" text="Completed Task" class="m-l-20 sidedrawer-item"></Label>
+                  </GridLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </GridLayout>
+    <page-router-outlet tkMainContent class="page page-content"></page-router-outlet>
+</RadSideDrawer>
