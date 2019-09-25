@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild, ElementRef, ComponentFactoryResolver } from '@angular/core';
+import { Component } from '@angular/core';
 import { TaskService } from './../task.service';
-import { filter, map } from 'rxjs/operators';
 import { ITask } from '~/app/tasks/interfaces/task.interface';
 import { Observable } from 'rxjs';
+import * as dialogs from 'tns-core-modules/ui/dialogs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ns-task-list',
@@ -11,10 +12,15 @@ import { Observable } from 'rxjs';
 })
 export class TaskListComponent {
   items: Observable<ITask[]> = this.taskService.tasks$;
+  progressValue = 0;
 
-  constructor(private taskService: TaskService) {}
+  constructor(private taskService: TaskService, private router: Router) {}
 
   delete(id: number) {
-    this.taskService.deleteTask(id);
+    dialogs.confirm('Do you want delete this task?').then(result => {
+      if (result) {
+        this.taskService.deleteTask(id);
+      }
+    });
   }
 }
