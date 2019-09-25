@@ -19,6 +19,6 @@ export class SettingsComponent {
 
   onSubmit() {
     this.taskService.addCategory(this.form.value.category);
-    this.router.navigate(['/task'], { clearHistory: true });
+    this.taskService.showToast('Category successfully added');
   }
 }

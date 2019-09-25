@@ -1,11 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
-import * as app from 'tns-core-modules/application';
 import { takeUntil } from 'rxjs/internal/operators';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RouterExtensions } from 'nativescript-angular';
 import { Page } from 'tns-core-modules/ui/page/page';
-import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 import { TaskService } from './../task.service';
 
 @Component({
@@ -61,13 +59,8 @@ export class TaskFormComponent implements OnInit, OnDestroy {
     });
 
     this.form.reset();
-    this.taskControlIsValid = true;
-    this.router.navigate(['/list'], { clearHistory: true });
-  }
-
-  onDrawerButtonTap(): void {
-    const sideDrawer = <RadSideDrawer>app.getRootView();
-    sideDrawer.showDrawer();
+    // this.taskControlIsValid = true;
+    this.taskService.showToast('Task successfully added');
   }
 
   ngOnDestroy() {

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ITask } from '~/app/tasks/interfaces/task.interface';
 import { filter, map } from 'rxjs/operators';
+import * as Toast from 'nativescript-toast';
 
 @Injectable({
   providedIn: 'root'
@@ -55,5 +56,9 @@ export class TaskService {
     });
 
     this.completedTask$.next(arr);
+  }
+
+  showToast(message: string) {
+    Toast.makeText(message).show();
   }
 }
